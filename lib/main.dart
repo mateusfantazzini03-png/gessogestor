@@ -164,7 +164,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
        result: _lastResult!
     );
 
-    // Use StorageService instead of DatabaseHelper
+    // Saving to local storage
     await StorageService().saveQuote(savedQuote); 
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Orçamento salvo no Histórico Local!')));
