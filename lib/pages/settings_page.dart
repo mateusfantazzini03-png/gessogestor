@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../models/models.dart';
 import '../services/profile_service.dart';
-import 'dart:io';
+// import 'dart:io'; // Not supported on Web
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -79,7 +79,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 radius: 50,
                 backgroundColor: Colors.grey[200],
                 backgroundImage: _logoPath != null 
-                  ? FileImage(File(_logoPath!)) 
+                  ? NetworkImage(_logoPath!) // Web compatible (blob URL)
                   : (_logoPath == 'assets/logo.png' ? const AssetImage('assets/logo.png') as ImageProvider : null),
                 child: _logoPath == null 
                   ? const Icon(Icons.camera_alt, size: 40, color: Colors.grey) 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:io';
+// import 'dart:io'; // Not supported on Web
 
 class GalleryPage extends StatefulWidget {
   const GalleryPage({Key? key}) : super(key: key);
@@ -73,7 +73,7 @@ class _GalleryPageState extends State<GalleryPage> {
                 return Stack(
                   fit: StackFit.expand,
                   children: [
-                    Image.file(File(_imagePaths[i]), fit: BoxFit.cover),
+                    Image.network(_imagePaths[i], fit: BoxFit.cover), // Web compatible
                     Positioned(
                       top: 5,
                       right: 5,
