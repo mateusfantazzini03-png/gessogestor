@@ -1,7 +1,27 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:intl/intl.dart';
+import 'package:printing/printing.dart';
+import 'services/profile_service.dart';
+import 'services/pdf_service.dart';
+import 'services/storage_service.dart';
+import 'models/models.dart';
+import 'pages/history_page.dart'; // Assuming these exist or will be needed
+import 'pages/gallery_page.dart'; // Assuming these exist
+import 'pages/settings_page.dart'; // Assuming these exist
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'GessoGestor',
       theme: ThemeData(
         primarySwatch: Colors.blue,
