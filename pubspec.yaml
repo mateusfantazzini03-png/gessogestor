@@ -8,6 +8,21 @@ environment:
 
 dependencies:
   flutter:
+    sdk: flutter
+  
+  # Core
+  shared_preferences: ^2.2.0
+  intl: ^0.18.1
+  
+  # PDF Generation
+  pdf: ^3.10.4
+  printing: ^5.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
 flutter:
   uses-material-design: true
   assets:
