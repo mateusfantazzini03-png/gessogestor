@@ -146,10 +146,13 @@ class _CalculatorPageState extends State<CalculatorPage> {
            logoBytes = byteData.buffer.asUint8List();
         } else {
            // Local file
+           // TODO: Fix for web (io.File not supported)
+           /*
            final file = io.File(_professional.logoPath!);
            if (await file.exists()) {
              logoBytes = await file.readAsBytes();
            }
+           */
         }
       } catch (e) {
         debugPrint('Erro ao carregar logo: $e');
